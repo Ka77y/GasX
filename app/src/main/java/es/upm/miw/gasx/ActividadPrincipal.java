@@ -1,4 +1,4 @@
-package es.upm.miw.demoretrofit;
+package es.upm.miw.gasx;
 
 import android.app.Activity;
 import android.os.Bundle;
@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 import java.util.List;
 
-import es.upm.miw.demoretrofit.models.Country;
+import es.upm.miw.gasx.models.Country;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;

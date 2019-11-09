@@ -1,8 +1,8 @@
-package es.upm.miw.demoretrofit;
+package es.upm.miw.gasx;
 
 import java.util.List;
 
-import es.upm.miw.demoretrofit.models.Country;
+import es.upm.miw.gasx.models.Country;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Path;

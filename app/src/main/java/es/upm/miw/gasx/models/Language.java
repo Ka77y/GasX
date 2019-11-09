@@ -1,4 +1,4 @@
-package es.upm.miw.demoretrofit.models;
+package es.upm.miw.gasx.models;
 
 
 import com.google.gson.annotations.Expose;
