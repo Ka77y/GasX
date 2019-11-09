@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">[MiW] DemoRetrofit (RESTCountries.eu)</string>
+    <string name="strError">No se ha recuperado ningún país</string>
+    <string name="btnDescripcion">Botón buscar</string>
+</resources>
