@@ -1,9 +1,8 @@
-package es.upm.miw.gasx.Manager;
+package es.upm.miw.gasx.manager;
 
 import java.util.List;
 
-import es.upm.miw.gasx.models.Country;
-import es.upm.miw.gasx.models.GasStation;
+import es.upm.miw.gasx.models.GasStationAPIObject;
 import retrofit2.Call;
 import retrofit2.http.GET;
 import retrofit2.http.Headers;
@@ -22,7 +21,7 @@ public interface IGasRESTAPIService {
             "Content-Type: application/json"
     })
     @GET(GET_STATION_PRICES_ENDPOINT)
-    Call<List<GasStation>> getGasStationPriceByLocality(
+    Call<List<GasStationAPIObject>> getGasStationPriceByLocality(
             @Path(GET_STATION_PRICES_LOCATION_VARIABLE) String location);
 
 
