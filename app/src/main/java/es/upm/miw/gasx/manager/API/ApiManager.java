@@ -33,6 +33,7 @@ public class ApiManager {
         for (GasStationAPIObject gasStation:gasStations) {
 
             gasStationsConverted.add(new GasStation(
+                    Float.toString(gasStation.getObjectid()),
                     gasStation.getProvincia(),
                     gasStation.getMunicipio(),
                     gasStation.getLocalidad(),

@@ -1,10 +1,12 @@
 package es.upm.miw.gasx.models;
 
-import java.util.List;
+import android.os.Parcel;
+import android.os.Parcelable;
 
-public class GasStation {
+public class GasStation implements Parcelable {
 
     private int ID;
+    private String Code;
     private String Province;
     private String Municipality;
     private String Location;
@@ -21,13 +23,14 @@ public class GasStation {
     private String Label;
     private String OpenHours;
 
-    public GasStation(int ID, String province, String municipality, String location,
+    public GasStation(int ID, String code, String province, String municipality, String location,
                       String address, float latitude, float longitude, float biodieselPrice,
                       float bioetanolPrice, float gasoleoAPrice, float gasoleoBPrice,
                       float gas95Price, float gas98Price, float nuevoGasoleoAPrice,
                       String label, String openHours) {
 
         this.ID = ID;
+        Code = code;
         Province = province;
         Municipality = municipality;
         Location = location;
@@ -45,11 +48,12 @@ public class GasStation {
         OpenHours = openHours;
     }
 
-    public GasStation(String province, String municipality, String location, String address,
+    public GasStation(String code,String province, String municipality, String location, String address,
                       float latitude, float longitude, float biodieselPrice, float bioetanolPrice,
                       float gasoleoAPrice, float gasoleoBPrice, float gas95Price, float gas98Price,
                       float nuevoGasoleoAPrice, String label, String openHours) {
 
+        Code = code;
         Province = province;
         Municipality = municipality;
         Location = location;
@@ -67,7 +71,7 @@ public class GasStation {
         OpenHours = openHours;
     }
 
-    //Getters and Setters
+    //region Getters and Setters
 
 
     public int getID() {
@@ -76,6 +80,14 @@ public class GasStation {
 
     public void setID(int ID) {
         this.ID = ID;
+    }
+
+    public String getCode() {
+        return Code;
+    }
+
+    public void setCode(String code) {
+        Code = code;
     }
 
     public String getProvince() {
@@ -197,4 +209,66 @@ public class GasStation {
     public void setOpenHours(String openHours) {
         OpenHours = openHours;
     }
+    //endregion
+
+    //region Parcelable
+    protected GasStation(Parcel in) {
+        ID = in.readInt();
+        Code = in.readString();
+        Province = in.readString();
+        Municipality = in.readString();
+        Location = in.readString();
+        Address = in.readString();
+        Latitude = in.readFloat();
+        Longitude = in.readFloat();
+        BiodieselPrice = in.readFloat();
+        BioetanolPrice = in.readFloat();
+        GasoleoAPrice = in.readFloat();
+        GasoleoBPrice = in.readFloat();
+        Gas95Price = in.readFloat();
+        Gas98Price = in.readFloat();
+        NuevoGasoleoAPrice = in.readFloat();
+        Label = in.readString();
+        OpenHours = in.readString();
+    }
+
+    @Override
+    public int describeContents() {
+        return 0;
+    }
+
+    @Override
+    public void writeToParcel(Parcel dest, int flags) {
+        dest.writeInt(ID);
+        dest.writeString(Code);
+        dest.writeString(Province);
+        dest.writeString(Municipality);
+        dest.writeString(Location);
+        dest.writeString(Address);
+        dest.writeFloat(Latitude);
+        dest.writeFloat(Longitude);
+        dest.writeFloat(BiodieselPrice);
+        dest.writeFloat(BioetanolPrice);
+        dest.writeFloat(GasoleoAPrice);
+        dest.writeFloat(GasoleoBPrice);
+        dest.writeFloat(Gas95Price);
+        dest.writeFloat(Gas98Price);
+        dest.writeFloat(NuevoGasoleoAPrice);
+        dest.writeString(Label);
+        dest.writeString(OpenHours);
+    }
+
+    @SuppressWarnings("unused")
+    public static final Parcelable.Creator<GasStation> CREATOR = new Parcelable.Creator<GasStation>() {
+        @Override
+        public GasStation createFromParcel(Parcel in) {
+            return new GasStation(in);
+        }
+
+        @Override
+        public GasStation[] newArray(int size) {
+            return new GasStation[size];
+        }
+    };
+    //endregion
 }
