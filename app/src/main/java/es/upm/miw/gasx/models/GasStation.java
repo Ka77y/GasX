@@ -9,15 +9,24 @@ public class GasStation {
     private String Municipality;
     private String Location;
     private String Address;
-    private Float Latitude;
-    private Float Longitude;
-    private List<Gas> GasList;
+    private float Latitude;
+    private float Longitude;
+    private float BiodieselPrice;
+    private float BioetanolPrice;
+    private float GasoleoAPrice;
+    private float GasoleoBPrice;
+    private float Gas95Price;
+    private float Gas98Price;
+    private float NuevoGasoleoAPrice;
     private String Label;
     private String OpenHours;
 
-    public GasStation(int ID, String province, String municipality, String location, String address,
-                      Float latitude, Float longitude, List<Gas> gasList,
+    public GasStation(int ID, String province, String municipality, String location,
+                      String address, float latitude, float longitude, float biodieselPrice,
+                      float bioetanolPrice, float gasoleoAPrice, float gasoleoBPrice,
+                      float gas95Price, float gas98Price, float nuevoGasoleoAPrice,
                       String label, String openHours) {
+
         this.ID = ID;
         Province = province;
         Municipality = municipality;
@@ -25,20 +34,35 @@ public class GasStation {
         Address = address;
         Latitude = latitude;
         Longitude = longitude;
-        GasList = gasList;
+        BiodieselPrice = biodieselPrice;
+        BioetanolPrice = bioetanolPrice;
+        GasoleoAPrice = gasoleoAPrice;
+        GasoleoBPrice = gasoleoBPrice;
+        Gas95Price = gas95Price;
+        Gas98Price = gas98Price;
+        NuevoGasoleoAPrice = nuevoGasoleoAPrice;
         Label = label;
         OpenHours = openHours;
     }
+
     public GasStation(String province, String municipality, String location, String address,
-                      Float latitude, Float longitude, List<Gas> gasList,
-                      String label, String openHours) {
+                      float latitude, float longitude, float biodieselPrice, float bioetanolPrice,
+                      float gasoleoAPrice, float gasoleoBPrice, float gas95Price, float gas98Price,
+                      float nuevoGasoleoAPrice, String label, String openHours) {
+
         Province = province;
         Municipality = municipality;
         Location = location;
         Address = address;
         Latitude = latitude;
         Longitude = longitude;
-        GasList = gasList;
+        BiodieselPrice = biodieselPrice;
+        BioetanolPrice = bioetanolPrice;
+        GasoleoAPrice = gasoleoAPrice;
+        GasoleoBPrice = gasoleoBPrice;
+        Gas95Price = gas95Price;
+        Gas98Price = gas98Price;
+        NuevoGasoleoAPrice = nuevoGasoleoAPrice;
         Label = label;
         OpenHours = openHours;
     }
@@ -86,28 +110,76 @@ public class GasStation {
         Address = address;
     }
 
-    public Float getLatitude() {
+    public float getLatitude() {
         return Latitude;
     }
 
-    public void setLatitude(Float latitude) {
+    public void setLatitude(float latitude) {
         Latitude = latitude;
     }
 
-    public Float getLongitude() {
+    public float getLongitude() {
         return Longitude;
     }
 
-    public void setLongitude(Float longitude) {
+    public void setLongitude(float longitude) {
         Longitude = longitude;
     }
 
-    public List<Gas> getGasList() {
-        return GasList;
+    public float getBiodieselPrice() {
+        return BiodieselPrice;
     }
 
-    public void setGasList(List<Gas> gasList) {
-        GasList = gasList;
+    public void setBiodieselPrice(float biodieselPrice) {
+        BiodieselPrice = biodieselPrice;
+    }
+
+    public float getBioetanolPrice() {
+        return BioetanolPrice;
+    }
+
+    public void setBioetanolPrice(float bioetanolPrice) {
+        BioetanolPrice = bioetanolPrice;
+    }
+
+    public float getGasoleoAPrice() {
+        return GasoleoAPrice;
+    }
+
+    public void setGasoleoAPrice(float gasoleoAPrice) {
+        GasoleoAPrice = gasoleoAPrice;
+    }
+
+    public float getGasoleoBPrice() {
+        return GasoleoBPrice;
+    }
+
+    public void setGasoleoBPrice(float gasoleoBPrice) {
+        GasoleoBPrice = gasoleoBPrice;
+    }
+
+    public float getGas95Price() {
+        return Gas95Price;
+    }
+
+    public void setGas95Price(float gas95Price) {
+        Gas95Price = gas95Price;
+    }
+
+    public float getGas98Price() {
+        return Gas98Price;
+    }
+
+    public void setGas98Price(float gas98Price) {
+        Gas98Price = gas98Price;
+    }
+
+    public float getNuevoGasoleoAPrice() {
+        return NuevoGasoleoAPrice;
+    }
+
+    public void setNuevoGasoleoAPrice(float nuevoGasoleoAPrice) {
+        NuevoGasoleoAPrice = nuevoGasoleoAPrice;
     }
 
     public String getLabel() {
